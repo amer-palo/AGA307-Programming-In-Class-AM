@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header ("Player Movement Variables")]
+    [Header("Player Movement Variables")]
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     float yRotation;
     float xRotation;
-    float lookSensitivity;
+    float lookSensitivity = 2;
     float currentXRotation;
     float currentYRotation;
     float yRotationV;
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     float lookSmoothness = 0.1f;
 
     CharacterController controller;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
