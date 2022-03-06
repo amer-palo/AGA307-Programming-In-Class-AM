@@ -9,12 +9,7 @@ public class FiringPoint : MonoBehaviour
     public Transform firingPoint;
     public LayerMask layerMask;
     public LineRenderer laser;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
@@ -29,19 +24,16 @@ public class FiringPoint : MonoBehaviour
     {
         Vector3 pos = new Vector3(firingPoint.position.x, firingPoint.position.y, firingPoint.position.z);
         if (Input.GetButton("Fire2"))
-        { 
-            Vector3 rayEnd = (firingPoint.TransformDirection(Vector3.forward * 100));
+        {
+            Vector3 rayEnd = firingPoint.TransformDirection(Vector3.forward * 50);
             laser.SetPosition(1, rayEnd);
             laser.SetPosition(0, pos);
+
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
 
-           
-          
-
-            if (Physics.Raycast(ray, out hit, 100, layerMask))
+            if (Physics.Raycast(ray, out hit, 50, layerMask))
             {
-                laser.SetPosition(1, hit.point);
                 Destroy(hit.collider.gameObject);
             }
         }
