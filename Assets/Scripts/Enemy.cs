@@ -12,10 +12,10 @@ public class Enemy : GameBehaviour
 
     [Header("AI")]
     public PatrolType myPatrol;
-    int patrolPoint = 0;            //Needed for linear patrol movement
-    bool reverse = false;           //Needed for repeat patrol movement
-    Transform startPos;             //Needed for repeat patrol movement
-    Transform endPos;               //Needed for repeat patrol movement
+    int patrolPoint = 0;            
+    bool reverse = false;           
+    Transform startPos;            
+    Transform endPos;               
     public Transform moveToPos;
 
     void Start()

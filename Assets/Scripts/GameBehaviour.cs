@@ -8,12 +8,7 @@ public class GameBehaviour : MonoBehaviour
     protected static EnemyManager _EM { get { return EnemyManager.INSTANCE; } }
 
 
-    /// <summary>
-    /// Shuffles a list using Unity's Random
-    /// </summary>
-    /// <typeparam name="T">The data type</typeparam>
-    /// <param name="_list">The list to shuffle</param>
-    /// <returns></returns>
+   
     public static List<T> ShuffleList<T>(List<T> _list)
     {
         for (int i = 0; i < _list.Count; i++)
